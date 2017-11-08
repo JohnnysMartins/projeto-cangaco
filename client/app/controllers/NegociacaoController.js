@@ -9,8 +9,7 @@ class NegociacaoController{
 
     adiciona(event) {
         event.preventDefault();
-        console.log('O tipo da data é: ' + typeof(this._inputData.value));
-
+        
         let negociacao = new Negociacao(
             new Date(this._inputData.value),
             parseInt(this._inputQuantidade.value),
