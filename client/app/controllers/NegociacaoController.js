@@ -12,7 +12,10 @@ class NegociacaoController {
         let data = new Date(
             ...this._inputData.value
                 .split('-')
-                .map((item, indice) => item - indice % 2));
+                .map((item, indice) => {
+                    console.log(item + " na posicao: " + indice);
+                    return indice == 1 ? item - 1 : item
+                }));
         let negociacao = new Negociacao(
             data,
             parseInt(this._inputQuantidade.value),
